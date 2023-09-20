@@ -1,0 +1,121 @@
+% !TEX program = xelatex
+\documentclass{article}
+
+\usepackage{blindtext}
+\usepackage{subfiles}
+\usepackage{calc}
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage{polyglossia}
+\usepackage[backend=biber]{biblatex}
+\usepackage{hyperref}
+
+\DeclareRobustCommand{\authorAName}{พศวัต ถิ่นกาญจน์วัฒนา}
+\DeclareRobustCommand{\authorAID}{6410451199}
+\DeclareRobustCommand{\authorAEmail}{potsawat.t@ku.th}
+\DeclareRobustCommand{\authorBName}{สรณ์สิริ หงษ์ษา}
+\DeclareRobustCommand{\authorBID}{6410451431}
+\DeclareRobustCommand{\authorBEmail}{sornsiri.h@ku.th}
+\DeclareRobustCommand{\advisorName}{ผศ. ดร.ชาคริต วัชโรภาส}
+
+\addbibresource{report.bib}
+
+\hypersetup{%
+colorlinks,
+linkcolor = red}
+
+\geometry{%
+a4paper,
+margin = 1in}
+
+\XeTeXlinebreaklocale "th"
+\setdefaultlanguage[numerals=arabic]{thai}
+\setotherlanguages{english}
+
+\setmainfont{TH Sarabun New}
+\newfontfamily\thaifont[Script=Default]{TH Sarabun New}
+
+\lstset{%
+basicstyle = \ttfamilylatin,
+commentstyle = \color{olive},
+keywordstyle = \color{magenta},
+numbers = left,
+captionpos = b,
+belowcaptionskip = 1ex,
+frame = single}
+
+\title{\textbf{Interference Coordination Method for Integrated HAPS-Terrestrial Networks}\vspace{2ex}\\
+\Large รายวิชา 01418497 สัมมนา\vspace{2ex}}
+
+\author{%
+\begin{tabularx}{\textwidth}[h]{X X}
+ \textbf{\authorBName}      & \textbf{\authorAName} \\
+ รหัสประจำตัวนิสิต \authorBID    & รหัสประจำตัวนิสิต \authorAID \\
+ \authorBEmail  & \authorAEmail \vspace{2ex} \\
+ \multicolumn{2}{c}{%
+ คณะผู้จัดทำ}
+\end{tabularx}}
+
+\date{}
+
+\begin{document}
+\begin{titlepage}
+\centering
+\maketitle
+\large\textbf{\advisorName}\\
+อาจารย์ที่ปรึกษา\linebreak
+\linebreak
+\linebreak
+\linebreak
+
+\begin{minipage}[t][][b]{\textwidth}
+\centering
+ภาคต้น ปีการศึกษา 2566\\
+ภาควิชาวิทยาการคอมพิวเตอร์ คณะวิทยาศาสตร์\\
+มหาวิทยาลัยเกษตรศาสตร์
+\end{minipage}
+\thispagestyle{empty}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+
+\newpage
+\pagenumbering{arabic}
+
+% Section 1
+\subfile{sections/01_intro.tex}
+
+% Section 2
+\newpage
+\subfile{sections/02_related-works.tex}
+
+% Section 3
+\newpage
+\subfile{sections/03_cases.tex}
+
+% Section 4
+\newpage
+\subfile{sections/04_perf.tex}
+
+% Section 5
+\newpage
+\subfile{sections/05_conclusions.tex}
+
+\newpage
+\printbibliography[title={บรรณานุกรม}]
+
+\newpage
+\pagenumbering{gobble}
+\listoffigures
+\listoftables
+\lstlistoflistings
+\end{document}
