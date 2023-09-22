@@ -3,8 +3,10 @@
 
 \usepackage{blindtext}
 \usepackage{subfiles}
+\usepackage{graphicx}
 \usepackage{calc}
 \usepackage{fontspec}
+\usepackage{setspace}
 \usepackage{geometry}
 \usepackage{xunicode}
 \usepackage{xltxtra}
@@ -42,6 +44,8 @@ margin = 1in}
 \setmainfont{TH Sarabun New}
 \newfontfamily\thaifont[Script=Default]{TH Sarabun New}
 
+\setstretch{1.5}
+
 \lstset{%
 basicstyle = \ttfamilylatin,
 commentstyle = \color{olive},
@@ -50,6 +54,8 @@ numbers = left,
 captionpos = b,
 belowcaptionskip = 1ex,
 frame = single}
+
+\graphicspath{{./images}}
 
 \title{\textbf{Interference Coordination Method for Integrated HAPS-Terrestrial Networks}\vspace{2ex}\\
 \Large รายวิชา 01418497 สัมมนา\vspace{2ex}}
