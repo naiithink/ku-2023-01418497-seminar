@@ -1,8 +1,9 @@
 % !TEX program = xelatex
+% !BIB program = bibtex
+
 \documentclass{article}
 
 \usepackage{blindtext}
-\usepackage{subfiles}
 \usepackage{graphicx}
 \usepackage{calc}
 \usepackage{fontspec}
@@ -16,7 +17,8 @@
 \usepackage{tabularx}
 \usepackage{listings}
 \usepackage{polyglossia}
-\usepackage[backend=biber]{biblatex}
+\usepackage{subfiles}
+\usepackage[backend=bibtex8]{biblatex}
 \usepackage{hyperref}
 
 \DeclareRobustCommand{\authorAName}{พศวัต ถิ่นกาญจน์วัฒนา}
@@ -27,7 +29,12 @@
 \DeclareRobustCommand{\authorBEmail}{sornsiri.h@ku.th}
 \DeclareRobustCommand{\advisorName}{ผศ. ดร.ชาคริต วัชโรภาส}
 
-\addbibresource{report.bib}
+\includeonly{%
+./sections/01_intro.tex,
+./sections/02_related-works.tex,
+./sections/03_cases.tex,
+./sections/04_perf.tex,
+./sections/05_conclusions.tex}
 
 \hypersetup{%
 colorlinks,
@@ -45,6 +52,8 @@ margin = 1in}
 \newfontfamily\thaifont[Script=Default]{TH Sarabun New}
 
 \setstretch{1.5}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{2ex}
 
 \lstset{%
 basicstyle = \ttfamilylatin,
@@ -71,6 +80,10 @@ frame = single}
 
 \date{}
 
+
+\addbibresource{report.bib}
+\bibstyle{ieeetr}
+
 \begin{document}
 \begin{titlepage}
 \centering
@@ -90,38 +103,45 @@ frame = single}
 \thispagestyle{empty}
 \end{titlepage}
 
-\newpage
+
+\clearpage
 \tableofcontents
 \thispagestyle{empty}
 
-\newpage
+
+\clearpage
 \pagenumbering{arabic}
 
 % Section 1
 \subfile{sections/01_intro.tex}
 
 % Section 2
-\newpage
+
+\clearpage
 \subfile{sections/02_related-works.tex}
 
 % Section 3
-\newpage
+
+\clearpage
 \subfile{sections/03_cases.tex}
 
 % Section 4
-\newpage
+
+\clearpage
 \subfile{sections/04_perf.tex}
 
 % Section 5
-\newpage
+
+\clearpage
 \subfile{sections/05_conclusions.tex}
 
-\newpage
+
+\clearpage
+\thispagestyle{empty}
 \printbibliography[title={บรรณานุกรม}]
 
-\newpage
+\clearpage
 \pagenumbering{gobble}
 \listoffigures
 \listoftables
-\lstlistoflistings
 \end{document}
