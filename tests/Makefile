@@ -25,8 +25,8 @@ test: $(TEST_FILE)
 
 config:
 	@# Preventing self execution
-	@echo "Setting source file permission"
-	@chmod 444 sources/fibo.py
+	@# echo "Setting source file permission"
+	@# chmod 444 sources/fibo.py
 
 clean:
 	@echo "Cleaning things up"
