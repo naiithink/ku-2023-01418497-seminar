@@ -1,5 +1,5 @@
 TEX_ENGINE = xelatex
-BIBTEX_ENGINE = bibtex
+BIBTEX_ENGINE = biblatex
 TEST_FILE := report.pdf
 
 all: config $(TEST_FILE)
