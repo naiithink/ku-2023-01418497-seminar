@@ -14,7 +14,9 @@
 \usepackage{xltxtra}
 \usepackage{amsmath}
 \usepackage{xcolor}
+\usepackage{float}
 \usepackage{multirow}
+\usepackage{multicol}
 \usepackage{tabularx}
 \usepackage{listings}
 \usepackage{polyglossia}
@@ -54,7 +56,8 @@ margin = 1in}
 \newfontfamily\thaifont[Script=Default]{TH Sarabun New}
 
 \setstretch{1.5}
-\setlength{\parindent}{1em}
+% \setlength{\parindent}{1em}
+\setlength{\columnsep}{5ex}
 \setlength{\parskip}{2ex}
 
 \lstset{%
@@ -68,20 +71,20 @@ frame = single}
 
 \graphicspath{{./images}}
 
-\title{\textbf{Interference Coordination Method for Integrated HAPS-Terrestrial Networks}\vspace{2ex}\\
-\Large รายวิชา 01418497 สัมมนา\vspace{2ex}}
+\title{วิธีการแทรกสอดการทำงานระหว่าง HAPS และเครือข่ายภาคพื้นดิน\\
+Interference Coordination Method for Integrated HAPS-Terrestrial Networks}
 
 \author{%
-\begin{tabularx}{\textwidth}[h]{X X}
- \textbf{\authorBName}      & \textbf{\authorAName} \\
- รหัสประจำตัวนิสิต \authorBID    & รหัสประจำตัวนิสิต \authorAID \\
- \authorBEmail  & \authorAEmail \vspace{2ex} \\
- \multicolumn{2}{c}{%
- คณะผู้จัดทำ}
-\end{tabularx}}
+{\centering
+\begin{tabular}[h]{p{0.16\textwidth} p{0.24\textwidth}}
+ \authorAID        & \authorAName \\
+ \authorBID        & \authorBName
+\end{tabular}}\\
+\\
+\large อาจารย์ที่ปรึกษา \advisorName\\
+ภาควิชาวิทยาการคอมพิวเตอร์ คณะวิทยาศาสตร์ มหาวิทยาลัยเกษตรศาสตร์}
 
-\date{}
-
+\date{2 ตุลาคม 2023}
 
 \addbibresource{report.bib}
 \bibstyle{ieeetr}
@@ -90,26 +93,13 @@ frame = single}
 \begin{titlepage}
 \centering
 \maketitle
-\large\textbf{\advisorName}\\
-อาจารย์ที่ปรึกษา\linebreak
-\linebreak
-\linebreak
-\linebreak
 
-\begin{minipage}[t][][b]{\textwidth}
-\centering
-ภาคต้น ปีการศึกษา 2566\\
-ภาควิชาวิทยาการคอมพิวเตอร์ คณะวิทยาศาสตร์\\
-มหาวิทยาลัยเกษตรศาสตร์
-\end{minipage}
 \thispagestyle{empty}
 \end{titlepage}
-
 
 \clearpage
 \tableofcontents
 \thispagestyle{empty}
-
 
 \clearpage
 \pagenumbering{arabic}
@@ -118,30 +108,27 @@ frame = single}
 \subfile{sections/01_intro.tex}
 
 % Section 2
-
 \clearpage
 \subfile{sections/02_related-works.tex}
 
 % Section 3
-
 \clearpage
 \subfile{sections/03_cases.tex}
 
 % Section 4
-
 \clearpage
 \subfile{sections/04_perf.tex}
 
 % Section 5
-
 \clearpage
 \subfile{sections/05_conclusions.tex}
 
-
+% Bibliography
 \clearpage
 \thispagestyle{empty}
 \printbibliography[title={บรรณานุกรม}]
 
+% Referencing tables
 \clearpage
 \pagenumbering{gobble}
 \listoffigures

@@ -1,17 +1,12 @@
 \section{ผลลัพธ์ประสิทธิภาพการทำงานระหว่าง HAPS และ Terrestrial Networks}
+
 \subsection{วิเคราะห์การนำวิธี ICM เข้าไปใช้ในเทคโนโลยี HAPS}
 
+\begin{multicols}{2}
 สาเหตุของสัญญาณรบกวนนั้น เกิดจากข้อจำกัดปริมาณการส่งข้อมูลใน 1 ชุดคำสั่ง(Protocol)
 HAPS กระจายสัญญาณครอบคลุมในพื้นที่วงกว้าง จึงทำให้ไม่สามารถแยกแยะความถี่ในแต่ละคลื่นสัญญาณได้
 การสื่อสารระหว่างสัญญาณจาก HAPS ไปยังสถานีภาคพื้นดินหลัก(Base Station - BS)
-และอุปกรณ์รับสัญญาณของผู้ใช้งานทั่วไป เช่น Smartphone(User Equipment - UE) \ref{fig:04-haps-with-tn} 
-
-\begin{figure}[h]
-\centering
-\caption[Interference Type]{Analysis for Inter-System Interference} 
-\label{fig:04-haps-with-tn} 
-\includegraphics[width=0.3\textwidth]{04_haps-with-tn.png}
-\end{figure}
+และอุปกรณ์รับสัญญาณของผู้ใช้งานทั่วไป เช่น Smartphone(User Equipment - UE) \ref{fig:04-haps-with-tn}
 
 \begin{itemize}
     \item Type 1 - เกิดสัญญาณรบกวนเป็นหลักที่ฝั่ง UE
@@ -24,18 +19,26 @@ HAPS กระจายสัญญาณครอบคลุมในพื้
 ผลการทดลองทั้ง 4 Type สรุปได้ว่าสัญญาณที่ส่งจากสถานีหลักไปยัง HAPS ด้วยการปรับมุมและทิศทางสามารถช่วยลดโอกาสที่จะเกิดสัญญาณรบกวนและลดปริมาณทรัพยากรที่ใช้ และประเมินผลออกมาเป็นกราฟดังนี้
 \ref{fig:04-haps-compare-downlink}
 
-\begin{figure}[h]
-\centering
-\caption[HAPS compare with downlink]{Downlink SE performance in terrestrial network (TN) with or without
-the interference from HAPS downlink.} 
-\label{fig:04-haps-compare-downlink}
-\includegraphics[width=0.3\textwidth]{04_haps-compare-downlink.png}
-\end{figure}
-
 กราฟแสดงถึงผลที่เกิดจากสัญญาณรบกวนจาก HAPS ไปยังสถานีภาคพื้นดิน(TN) และอุปกรณ์ของผู้ใช้(UE)
 ในความถี่และรัศมีครอบคลุมที่แตกต่างกัน(2 GHz, 39 GHz, 0 km., 100 km.) โดยมีตัวชี้วัดคือประสิทธิภาพของสเปกตรัม(Spectral Efficiency - SE)
-วัดปริมาณข้อมูลที่ส่งผ่านแบนด์วิธ(bandwidth)ภายในระบบ\\
+วัดปริมาณข้อมูลที่ส่งผ่านแบนด์วิธ(bandwidth)ภายในระบบ
 
+\columnbreak
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{04_haps-with-tn.png}
+\caption[Interference Type]{Analysis for Inter-System Interference} \label{fig:04-haps-with-tn} 
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{04_haps-compare-downlink.png}
+\caption[HAPS compare with downlink]{Downlink SE performance in terrestrial network (TN) with or without
+the interference from HAPS downlink.} \label{fig:04-haps-compare-downlink}
+\end{figure}
+\end{multicols}
 
 \subsection{การปรับใช้}
 แบ่งออกได้เป็นหลายกรณี ได้แก่
@@ -55,14 +58,32 @@ the interference from HAPS downlink.}
             Pattern 4 -> Base Station เปลี่ยนสถานะเป็น Idle และให้ HAPS จัดการในพื้นที่ที่มีสัญญาณซ้อน โดย Pattern นี้ส่งผลแค่ในกรณีที่ traffic load ใน TN น้อย
 \end{description}
 
-โดยรวมแล้วเราสรุปผลในทาง techical terms ออกมาได้ดังตารางต่อไปนี้ \ref{fig:04-haps-evaluation}
+โดยรวมแล้วเราสรุปผลในทาง techical terms ออกมาได้ดังตารางต่อไปนี้ \ref{table:04-haps-evaluation}
 
-\begin{figure}[h]
+\begin{table}[h]
 \centering
-\caption[]{Evaluation Assumptions}
-\label{fig:04-haps-evaluation} 
-\includegraphics[width=0.5\textwidth]{04_haps_evaluation.png}
-\end{figure}
+% \includegraphics[width=0.5\textwidth]{04_haps_evaluation.png}
+\begin{tabular}[h]{| l | l |}
+\hline
+Parameters                      & Values or assumptions \\
+\hline
+Carrier frequency               & 2 GHz \\
+\hline
+Total bandwidth                 & 20 MHz \\
+\hline
+Number of HAPS cells            & 30 cells \\
+\hline
+\parbox[t]{12em}{Layer number of HAPS cells and layout (Note: Cells with same distance from the center are defined in one layer.)}        & \parbox[t]{12em}{4 layers with, 1 cell for layer-1, 8 cells for layer-2, 9 cells for layer-3, 12 cells for layer-4} \\
+\hline
+Radius of HAPS coverage         & 50 km \\
+\hline
+Number of users                 & Uniformly distributed in [0,30000] \\
+\hline
+Number of terrestrial BSs per HAPS cell & Uniformly distributed in [0,6]\\
+\hline
+\end{tabular}
+\caption{Evaluation Assumptions} \label{table:04-haps-evaluation}
+\end{table}
 
 \subsection{การประยุกต์ใช้ ICM}
 

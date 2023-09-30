@@ -1,5 +1,7 @@
 {
     // >>> "James-Yu.latex-workshop"
+    "latex-workshop.latex.recipe.default": "first",
+    "latex-workshop.latex.rootFile.useSubFile": true,
     "latex-workshop.latex.build.forceRecipeUsage": false,
     "latex-workshop.latex.autoBuild.run": "never",
     "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": true,
@@ -11,6 +13,15 @@
         "%DOC%"
     ],
     "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex ➞ bibtex ➞ xelatex × 2",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
         {
             "name": "latexmk 🔃",
             "tools": [
