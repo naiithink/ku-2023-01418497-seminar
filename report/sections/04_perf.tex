@@ -3,10 +3,10 @@
 \subsection{วิเคราะห์การนำวิธี ICM เข้าไปใช้ในเทคโนโลยี HAPS}
 
 \begin{multicols}{2}
-สาเหตุของสัญญาณรบกวนนั้น เกิดจากข้อจำกัดปริมาณการส่งข้อมูลใน 1 ชุดคำสั่ง(Protocol)
+สาเหตุของสัญญาณรบกวนนั้น เกิดจากข้อจำกัดปริมาณการส่งข้อมูลใน 1 ชุดคำสั่ง (Protocol)
 HAPS กระจายสัญญาณครอบคลุมในพื้นที่วงกว้าง จึงทำให้ไม่สามารถแยกแยะความถี่ในแต่ละคลื่นสัญญาณได้
-การสื่อสารระหว่างสัญญาณจาก HAPS ไปยังสถานีภาคพื้นดินหลัก(Base Station - BS)
-และอุปกรณ์รับสัญญาณของผู้ใช้งานทั่วไป เช่น Smartphone(User Equipment - UE) \ref{fig:04-haps-with-tn}
+การสื่อสารระหว่างสัญญาณจาก HAPS ไปยังสถานีภาคพื้นดินหลัก (Base Station - BS)
+และอุปกรณ์รับสัญญาณของผู้ใช้งานทั่วไป เช่น Smartphone (User Equipment - UE) \ref{fig:04-haps-with-tn}
 
 \begin{itemize}
     \item Type 1 - เกิดสัญญาณรบกวนเป็นหลักที่ฝั่ง UE
@@ -19,9 +19,9 @@ HAPS กระจายสัญญาณครอบคลุมในพื้
 ผลการทดลองทั้ง 4 Type สรุปได้ว่าสัญญาณที่ส่งจากสถานีหลักไปยัง HAPS ด้วยการปรับมุมและทิศทางสามารถช่วยลดโอกาสที่จะเกิดสัญญาณรบกวนและลดปริมาณทรัพยากรที่ใช้ และประเมินผลออกมาเป็นกราฟดังนี้
 \ref{fig:04-haps-compare-downlink}
 
-กราฟแสดงถึงผลที่เกิดจากสัญญาณรบกวนจาก HAPS ไปยังสถานีภาคพื้นดิน(TN) และอุปกรณ์ของผู้ใช้(UE)
-ในความถี่และรัศมีครอบคลุมที่แตกต่างกัน(2 GHz, 39 GHz, 0 km., 100 km.) โดยมีตัวชี้วัดคือประสิทธิภาพของสเปกตรัม(Spectral Efficiency - SE)
-วัดปริมาณข้อมูลที่ส่งผ่านแบนด์วิธ(bandwidth)ภายในระบบ
+กราฟแสดงถึงผลที่เกิดจากสัญญาณรบกวนจาก HAPS ไปยังสถานีภาคพื้นดิน (TN) และอุปกรณ์ของผู้ใช้ (UE)
+ในความถี่และรัศมีครอบคลุมที่แตกต่างกัน (2 GHz, 39 GHz, 0 km., 100 km.) โดยมีตัวชี้วัดคือประสิทธิภาพของสเปกตรัม(Spectral Efficiency - SE)
+วัดปริมาณข้อมูลที่ส่งผ่านแบนด์วิธ (bandwidth) ภายในระบบ
 
 \columnbreak
 
@@ -44,16 +44,16 @@ the interference from HAPS downlink.} \label{fig:04-haps-compare-downlink}
 แบ่งออกได้เป็นหลายกรณี ได้แก่
 
 \begin{description}
-    \item Case a - ทดลองในพื้นที่ที่ไม่มีสัญญาณซ้อน(Non-overlapping areas) ผลที่ได้คือจะไม่เกิดสัญญาณรบกวนภายในระบบ
-            ทำให้วิธีการเชื่อมต่อแบบเดิมโดย HAPS เป็นศูนย์กลาง(HAPS Stand-Alone) ยังสามารถใช้งานได้ตามปกติ
-    \item Case b1 - ทดลองในพื้นที่ที่มีสัญญาณทับซ่อนแต่ไม่มีการรับส่งข้อมูลเครือข่ายภาคพื้นดิน(Overlapping area, No traffic in terrestrial systems)
+    \item Case a - ทดลองในพื้นที่ที่ไม่มีสัญญาณซ้อน (Non-overlapping areas) ผลที่ได้คือจะไม่เกิดสัญญาณรบกวนภายในระบบ
+            ทำให้วิธีการเชื่อมต่อแบบเดิมโดย HAPS เป็นศูนย์กลาง (HAPS Stand-Alone) ยังสามารถใช้งานได้ตามปกติ
+    \item Case b1 - ทดลองในพื้นที่ที่มีสัญญาณทับซ่อนแต่ไม่มีการรับส่งข้อมูลเครือข่ายภาคพื้นดิน (Overlapping area, No traffic in terrestrial systems) 
             ผลที่ได้คือสามารถเปลี่ยนเป็นโหมด Idle เพื่อลดการใช้พลังงานและป้องกันสัญญาณรบกวนที่เข้ามาในระบบ เนื่องจากระยะระหว่าง HAPS กับ User Equipment ห่างกันมาก
-    \item Case b2 - ทดลองในพื้นที่ที่มีสัญญาณทับซ้อนแต่ไม่มีการรับส่งข้อมูลทางฝั่ง HAPS(Overlapping areas, No traffic in HAPS Coverage)
-            เมื่อปิด HAPS beam และสัญญาณจากอุปกรณ์ของผู้ใช้(Customer premises equipment - CPE) ส่งผลในสัญญาณรบกวนระหว่าง HAPS กับ TN ลดลงอย่างมาก
-    \item Case b3 - ทดลองในพื้นที่ที่มีสัญญาณรบกวนและมีการรับส่งข้อมูลทั้งสองเครือข่าย(Both overlapping areas and traffic in HAPS with terrestrial systems)
+    \item Case b2 - ทดลองในพื้นที่ที่มีสัญญาณทับซ้อนแต่ไม่มีการรับส่งข้อมูลทางฝั่ง HAPS (Overlapping areas, No traffic in HAPS Coverage) 
+            เมื่อปิด HAPS beam และสัญญาณจากอุปกรณ์ของผู้ใช้ (Customer premises equipment - CPE) ส่งผลในสัญญาณรบกวนระหว่าง HAPS กับ TN ลดลงอย่างมาก
+    \item Case b3 - ทดลองในพื้นที่ที่มีสัญญาณรบกวนและมีการรับส่งข้อมูลทั้งสองเครือข่าย (Both overlapping areas and traffic in HAPS with terrestrial systems) 
             ผู้ใช้งานจะได้รับผลกระทบจากทั้งสองระบบ นอกจากนี้ใน Case b3 ยังจำแนกออกเป็น 4 Pattern หลักได้ดังต่อไปนี้ 
             Pattern 1 -> HAPS และ TN ไม่มีการประสานระหว่างทั้งสองระบบ อาจส่งผลให้เกิดสัญญาณรบกวนจนส่งผลให้ประสิทธิภาพและการใช้ทรัพยากรลดลง
-            Pattern 2 -> HAPS และ TN กระจายสัญญาณเหมือนเดิม แต่ใช้วิธี Inter-Cell Interference Coordination(ICIC) เป็นอีกความเป็นไปได้ในการลดสัญญาณรบกวน
+            Pattern 2 -> HAPS และ TN กระจายสัญญาณเหมือนเดิม แต่ใช้วิธี Inter-Cell Interference Coordination (ICIC) เป็นอีกความเป็นไปได้ในการลดสัญญาณรบกวน
             Pattern 3 -> HAPS cells เปลี่ยนสถานะเป็น Idle และให้ Base Station เป็นตัวกลางหลักแทน โดย Pattern นี้ส่งผลแค่ในกรณีที่รับส่งข้อมูลใน cell ต่ำเท่านั้น
             Pattern 4 -> Base Station เปลี่ยนสถานะเป็น Idle และให้ HAPS จัดการในพื้นที่ที่มีสัญญาณซ้อน โดย Pattern นี้ส่งผลแค่ในกรณีที่ traffic load ใน TN น้อย
 \end{description}
@@ -88,7 +88,7 @@ Number of terrestrial BSs per HAPS cell & Uniformly distributed in [0,6]\\
 \subsection{การประยุกต์ใช้ ICM}
 
 จากงานวิจัยของ \cite[Interference Coordination Method for Integrated HAPS-Terrestrial Networks]{liu2021interference}
-นำเสนอถึงวิธีการแทรกคลื่นสัญญาณ(Interference Coordination Method - ICM) เข้าไประหว่างคลื่นสัญญาณของ HAPS กับ สถานีเครือข่ายภาคพื้นดิน โดยมีเงื่อนไขต่อไปนี้
+นำเสนอถึงวิธีการแทรกคลื่นสัญญาณ (Interference Coordination Method - ICM) เข้าไประหว่างคลื่นสัญญาณของ HAPS กับ สถานีเครือข่ายภาคพื้นดิน โดยมีเงื่อนไขต่อไปนี้
 \begin{itemize}
     \item คำนึงถึงการกระจายปริมาณรับส่งข้อมูลเป็นหลัก 
     \item ประสิทธิภาพที่ได้โดยเทียบจากปริมาณพลังงาน,ทรัพยากรที่เสียไปและปริมาณข้อมูลที่เคลื่อนที่ผ่านเครือข่าย ณ เวลาที่กำหนด (Traffic Load)
